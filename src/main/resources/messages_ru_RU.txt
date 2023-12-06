@@ -1,0 +1,21 @@
+login.username=Логин
+login.password=Пароль
+login.signinbut=Авторизироваться
+login.error=Некорректный логин или пароль!
+login.logout=Вы покинули свою учетную запись!
+
+studentsTable.title=Список студентов
+studentsTable.name=Имя
+studentsTable.surname=Фамилия
+studentsTable.patronymic=Отчество
+studentsTable.variant=Вариант
+studentsTable.rating=Рейтинг
+studentsTable.works=Работ выполнено
+createstudent.but=Добавить
+createstudent.title=Форма добавления студента
+changestudent.title=Форма изменения студента
+deletestudent.title=Форма удаления студента
+changestudent.changebut=Изменить
+changestudent.deletebut=Удалить
+
+index.logout=Выйти

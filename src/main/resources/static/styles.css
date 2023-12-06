@@ -1,0 +1,15 @@
+#adminForms {
+    display: flex;
+    width: 100% !important;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#createStudent, #changeStudent, #deleteStudent {
+    margin: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px; /* Закругляем углы формы */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}

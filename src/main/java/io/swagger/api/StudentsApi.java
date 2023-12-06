@@ -5,7 +5,8 @@
  */
 package io.swagger.api;
 
-import io.swagger.model.Student;
+import io.swagger.DataBase.models.StudentDTO;
+import io.swagger.DataBase.models.Student;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -16,6 +17,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,7 +44,7 @@ public interface StudentsApi {
         @ApiResponse(responseCode = "200", description = "Успешный запрос") })
     @RequestMapping(value = "/students",
         method = RequestMethod.GET)
-    ResponseEntity<ArrayList<Student>> studentsGet();
+    ResponseEntity<List<StudentDTO>> studentsGet();
 
 
     @Operation(summary = "Добавить нового студента", description = "", tags={  })
@@ -51,7 +53,7 @@ public interface StudentsApi {
     @RequestMapping(value = "/students",
         consumes = { "application/json" }, 
         method = RequestMethod.POST)
-    ResponseEntity<String> studentsPost(@Parameter(in = ParameterIn.DEFAULT, description = "", required=true, schema=@Schema()) @Valid @RequestBody Student body);
+    ResponseEntity<StudentDTO> studentsPost(@Parameter(in = ParameterIn.DEFAULT, description = "", required = true, schema = @Schema()) @Valid @RequestBody StudentDTO body);
 
 
     @Operation(summary = "Удалить студента", description = "", tags={  })
@@ -59,9 +61,9 @@ public interface StudentsApi {
         @ApiResponse(responseCode = "204", description = "Студент успешно удален"),
         
         @ApiResponse(responseCode = "404", description = "Студент не найден") })
-    @RequestMapping(value = "/students/{studentName}",
+    @RequestMapping(value = "/students/{id}",
         method = RequestMethod.DELETE)
-    ResponseEntity<Void> studentsStudentNameDelete(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("studentName") String studentName);
+    ResponseEntity<String> studentsStudentNameDelete(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("id") Long id);
 
 
     @Operation(summary = "Получить данные о студенте", description = "", tags={  })
@@ -69,10 +71,10 @@ public interface StudentsApi {
         @ApiResponse(responseCode = "200", description = "Успешный запрос", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Student.class))),
         
         @ApiResponse(responseCode = "404", description = "Студент не найден") })
-    @RequestMapping(value = "/students/{studentName}",
+    @RequestMapping(value = "/students/{id}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    ResponseEntity<Student> studentsStudentNameGet(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("studentName") String studentName);
+    ResponseEntity<StudentDTO> studentsStudentNameGet(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("id") Long id);
 
 
     @Operation(summary = "Обновить данные о студенте", description = "", tags={  })
@@ -80,10 +82,10 @@ public interface StudentsApi {
         @ApiResponse(responseCode = "204", description = "Данные о студенте успешно обновлены"),
         
         @ApiResponse(responseCode = "404", description = "Студент не найден") })
-    @RequestMapping(value = "/students/{studentName}",
+    @RequestMapping(value = "/students/{id}",
         consumes = { "application/json" }, 
         method = RequestMethod.PUT)
-    ResponseEntity<Void> studentsStudentNamePut(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("studentName") String studentName, @Parameter(in = ParameterIn.DEFAULT, description = "", required=true, schema=@Schema()) @Valid @RequestBody Student body);
+    ResponseEntity<StudentDTO> studentsStudentNamePut(@Parameter(in = ParameterIn.PATH, description = "", required=true, schema=@Schema()) @PathVariable("id") Long id, @Parameter(in = ParameterIn.DEFAULT, description = "", required=true, schema=@Schema()) @Valid @RequestBody StudentDTO body);
 
 }
 

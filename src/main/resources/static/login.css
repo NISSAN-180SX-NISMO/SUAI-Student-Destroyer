@@ -1,0 +1,88 @@
+
+
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f8f9fa;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*}*/
+
+/*form {*/
+/*    background-color: #ffffff;*/
+/*    padding: 20px;*/
+/*    border-radius: 10px; !* Закругляем углы формы *!*/
+/*    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);*/
+/*    text-align: center; !* Центрируем содержимое формы по горизонтали *!*/
+/*}*/
+
+/*label {*/
+/*    display: block;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*input {*/
+/*    width: 100%;*/
+/*    padding: 8px;*/
+/*    margin-bottom: 10px;*/
+/*    box-sizing: border-box;*/
+/*    border-radius: 10px; !* Закругляем углы полей ввода *!*/
+/*    border: 1px solid #ced4da; !* Добавляем обводку *!*/
+/*}*/
+
+/*input[type="submit"] {*/
+/*    background-color: #007bff;*/
+/*    color: #ffffff;*/
+/*    cursor: pointer;*/
+/*    border: none;*/
+/*    border-radius: 10px; !* Закругляем углы кнопки *!*/
+/*}*/
+
+/*div {*/
+/*    margin-bottom: 15px;*/
+/*    color: #c1c1c1; !* Изменяем цвет текста *!*/
+/*}*/
+
+/*#error {*/
+/*    color: crimson;*/
+/*}*/
+
+/*#logout {*/
+/*    color: greenyellow;*/
+/*}*/
+
+/*!* Optional: Add some responsive styles *!*/
+/*@media (max-width: 600px) {*/
+/*    form {*/
+/*        width: 80%;*/
+/*    }*/
+/*}*/
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px; /* Закругляем углы формы */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    min-width: 450px !important;
+    min-height: 200px !important;
+}
+
+.alert {
+    margin-top: 21.33px;
+    margin-bottom: 0px !important;
+}
